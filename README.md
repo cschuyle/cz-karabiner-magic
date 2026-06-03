@@ -28,3 +28,10 @@ changes with respect to the actual keycaps, plus ad-hoc my-personal-muscle memor
   ```
   ./copy-local-backup-back-to-config.sh
   ```
+
+- Compare local-dir backup to active config
+  ```
+  ./diff-backup-with-active-config.sh
+  ```
+  Prints a recursive diff of `~/.config/karabiner` vs `karabiner-config-backup-v16.0.0`.
+  If there are no differences, diff prints nothing and exits successfully.
