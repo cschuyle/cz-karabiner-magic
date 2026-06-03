@@ -9,11 +9,11 @@ changes with respect to the actual keycaps, plus ad-hoc my-personal-muscle memor
 - Install Karabiner-Elements v16.0.0 
 
 ## The config does the following:
-- Swap Y and Z
+- Swap `Y` and `Z`
 - Numbers are unshifted
-- Shift-\<number keys\> output what would otherwise require Alt (obeying the keycaps)
-- Map umlaut-combiner (dead key) to Carriage Return because the CR key is too skinny for my phat phingers
-- Map ů --> ; and § (section sign) --> ' (don't require Alt)
+- ⇧-_\<number keys\>_ output what would otherwise require ⌥ (obeying the keycaps)
+- Map umlaut-combiner (dead key) to ↩ because the ↩ key is too skinny for my phat phingers
+- Map `ů` → `;` and `§` (section sign) → `'` (don't require ⌥)
 
 ## Scripts
 
