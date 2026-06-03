@@ -1,20 +1,30 @@
-This is for the Czeck keyboard Macbook Neo I bought in Prague in June 2026
+This is for the Czech keyboard Macbook Neo I bought in Prague in June 2026
 
-Depends on:
-- input source (System Settings) set to Czech QWERTY
+I needed to be funtional quick! So I told AI to use Karabiner-Elements to do sort-of-minimal 
+changes with respect to the actual keycaps, plus ad-hoc my-personal-muscle memory (learned on a US keyboard)
+
+## Depends on:
+- Set your Input Source (in System Settings) to Czech QWERTY
 - No other input sources installed
 - Install Karabiner-Elements v16.0.0 
 
-It does the following:
-- swap Y and Z
-- numbers are unshifted
-- Shift-<number keys> output what would otherwise require Alt
-- Map umlaut-combiner (dead key) to Carriage Return
-- Map ů --> ; and § (section sign) --> '
+## The config does the following:
+- Swap Y and Z
+- Numbers are unshifted
+- Shift-\<number keys\> output what would otherwise require Alt (obeying the keycaps)
+- Map umlaut-combiner (dead key) to Carriage Return because the CR key is too skinny for my phat phingers
+- Map ů --> ; and § (section sign) --> ' (don't require Alt)
 
+## Scripts
 
-Backup the current Karabiner rules JUST IN CASE:
-```
-./backup-karabiner-settings.sh
-```
+- Backup the current Karabiner rules JUST IN CASE:
+  ```
+  ./backup-karabiner-settings.sh
+  ```
 
+- Copy the backup over the active config (That's my dev cycle)
+  
+  __BEWARE! This is nice 'n destructive!__
+  ```
+  ./copy-local-backup-back-to-config.sh
+  ```
