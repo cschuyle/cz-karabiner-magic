@@ -10,7 +10,7 @@ It does the following:
 - numbers are unshifted
 - Shift-<number keys> output what would otherwise require Alt
 - Map umlaut-combiner (dead key) to Carriage Return
-- TODO: Map ů --> ; and § (section sign) --> '
+- Map ů --> ; and § (section sign) --> '
 
 
 Backup the current Karabiner rules JUST IN CASE:
