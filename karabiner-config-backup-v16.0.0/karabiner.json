@@ -292,7 +292,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to (ASCII character 39)' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "quote",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -330,7 +333,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \";\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "semicolon",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -349,7 +355,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to (ASCII character 34)' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "semicolon",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
