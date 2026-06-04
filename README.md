@@ -23,13 +23,12 @@ pragmatic rather than a "proper" custom keyboard layout.
 (Y and Z are *not* swapped — the Czech **QWERTY** variant already keeps them in
 the US positions, so no remap is needed.)
 
-- **Unshifted number row** — press a number key to get the digit; press `⇧`
+- **Unshifted number row** — 
   to get the accented Czech letter (the inverse of the stock Czech layout).
-- **`⇧` + number row → US-style symbols** (`@ # $ ~ ^ & * { }`, etc.), roughly
-  following the US keyboard rather than the Czech keycaps.
+- **`⇧` + number row → US-style symbols** - press a number key to get the digit; press `⇧` to get what would otherwise be got by using `⌥` (`@ # $ ~ ^ & * { }`, etc.).
 - **A few extra symbol fixes** — `⇧1` → `+`, `=` / `%` on the equals key,
   and `⇧\` → backtick (`` ` ``).
-- **Umlaut/dead-key combiner (the `\` key) → `↩`**, because the physical `↩`
+- **Umlaut dead-key combiner → `↩`**, because the physical `↩`
   key is too skinny for my fingers.
 - **`§` (section) → `'`** and **`ů` → `;`** (with `"` on `⇧ů`), so common
   programmer punctuation doesn't require `⌥` gymnastics.
