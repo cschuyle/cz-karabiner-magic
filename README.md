@@ -1,37 +1,97 @@
-This is for the Czech keyboard Macbook Neo I bought in Prague in June 2026
+# cz-karabiner-magic
 
-I needed to be funtional quick! So I told AI to use Karabiner-Elements to do sort-of-minimal 
-changes with respect to the actual keycaps, plus ad-hoc my-personal-muscle memory (learned on a US keyboard)
+A [Karabiner-Elements](https://karabiner-elements.pqrs.org/) config for a
+Czech-keycap MacBook (a "Neo" I bought in Prague in June 2026), tweaked so it
+behaves close to the US layout my muscle memory expects — while still mostly
+respecting what's actually printed on the keys.
 
-## Depends on:
-- Set your Input Source (in System Settings) to Czech QWERTY
-- No other input sources installed
-- Install Karabiner-Elements v16.0.0 
+I wanted to be functional fast, so the changes are deliberately minimal and
+pragmatic rather than a "proper" custom keyboard layout.
 
-## The config does the following:
-- Swap `Y` and `Z`
-- Numbers are unshifted
-- ⇧-_\<number keys\>_ output what would otherwise require ⌥ (obeying the keycaps)
-- Map umlaut-combiner (dead key) to ↩ because the ↩ key is too skinny for my phat phingers
-- Map `ů` → `;` and `§` (section sign) → `'` (don't require ⌥)
+## Requirements
 
-## Scripts
+- **macOS** with [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+  installed (built/tested against **v16.0.0**).
+- Input Source set to **Czech – QWERTY** in System Settings → Keyboard →
+  Input Sources.
+- **Only that one input source installed.** Several mappings here depend on the
+  active layout being Czech QWERTY; extra input sources can change what a key
+  produces and break things.
 
-- Backup the current Karabiner rules JUST IN CASE:
-  ```
-  ./backup-karabiner-settings.sh
-  ```
+## What the config does
 
-- Copy the backup over the active config (That's my dev cycle)
-  
-  __BEWARE! This is nice 'n destructive!__
-  ```
-  ./copy-local-backup-back-to-config.sh
-  ```
+(Y and Z are *not* swapped — the Czech **QWERTY** variant already keeps them in
+the US positions, so no remap is needed.)
 
-- Compare local-dir backup to active config
-  ```
-  ./diff-backup-with-active-config.sh
-  ```
-  Prints a recursive diff of `~/.config/karabiner` vs `karabiner-config-backup-v16.0.0`.
-  If there are no differences, diff prints nothing and exits successfully.
+- **Unshifted number row** — press a number key to get the digit; press `⇧`
+  to get the accented Czech letter (the inverse of the stock Czech layout).
+- **`⇧` + number row → US-style symbols** (`@ # $ ~ ^ & * { }`, etc.), roughly
+  following the US keyboard rather than the Czech keycaps.
+- **A few extra symbol fixes** — `⇧1` → `+`, `=` / `%` on the equals key,
+  and `⇧\` → backtick (`` ` ``).
+- **Umlaut/dead-key combiner (the `\` key) → `↩`**, because the physical `↩`
+  key is too skinny for my fingers.
+- **`§` (section) → `'`** and **`ů` → `;`** (with `"` on `⇧ů`), so common
+  programmer punctuation doesn't require `⌥` gymnastics.
+- **Swap the `<>` and `|\` keys** to match where I expect them.
+
+## The dead-key gotcha (why some mappings look weird)
+
+On the Czech QWERTY layout several physical keys are **dead keys** (e.g. the
+quote key is an acute-accent combiner), so naively remapping a key to
+`key_code: quote` produces an accent, not the character you want.
+
+An earlier version worked around this by shelling out to `osascript` to set the
+clipboard and paste — which added a **~1 second delay** on every press. That's
+been replaced with **native key events that target the correct level of the
+Czech QWERTY layout**. For example, a literal apostrophe is `⌥` + `quote` on
+this layout, so the rule emits exactly that and is instant.
+
+If you're adapting this for a different layout, the key insight is: find which
+`key_code` + modifier combination already produces the character you want under
+your active macOS layout, and map *to* that, instead of pasting via the
+clipboard.
+
+## Install
+
+This repo's `karabiner/` directory **is** a Karabiner config directory. The
+intended setup is to symlink Karabiner's config location to it, so editing the
+repo updates the live config directly (Karabiner reloads on file change).
+
+> [!WARNING]
+> This replaces your existing Karabiner configuration. Back it up first.
+
+```sh
+# 1. Back up whatever you have now (if anything).
+mv ~/.config/karabiner ~/.config/karabiner.backup-$(date +%Y%m%d) 2>/dev/null || true
+
+# 2. Point Karabiner at this repo's config dir.
+git clone https://github.com/<you>/cz-karabiner-magic.git
+ln -s "$PWD/cz-karabiner-magic/karabiner" ~/.config/karabiner
+```
+
+Then open Karabiner-Elements and confirm the profile loaded. Because the symlink
+points at the repo, any commit you pull or edit you make takes effect live.
+
+> Note: there used to be `backup` / `copy` / `diff` helper scripts for a
+> copy-based workflow. They're gone — the symlink makes them unnecessary.
+
+## Tests
+
+The remappings are validated without needing Karabiner running. (True
+end-to-end testing isn't feasible: synthetic key events bypass Karabiner's
+manipulators, and the output depends on the live input source.)
+
+Instead, the tests model the Apple "Czech – QWERTY" layout and assert that each
+native remapping is wired to the `key_code` + modifier combo that actually
+produces the intended character. This catches mistakes like a rule that *claims*
+to output `~` but is wired to a combo the layout maps to `|`.
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+- `tests/czech_qwerty_layout.json` — model of the layout (each key's output at
+  the base / Shift / Option / Option+Shift levels).
+- `tests/test_karabiner_config.py` — JSON/structure validation plus the
+  layout-semantic checks. Add a row to `EXPECTED_OUTPUTS` to cover another key.
