@@ -25,7 +25,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"@\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "2",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -44,7 +47,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"#\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "3",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -63,7 +69,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"$\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "4",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -104,7 +113,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"^\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "6",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -123,7 +135,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"&\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "7",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -142,7 +157,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"*\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "8",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -161,7 +179,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"{\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "9",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -180,7 +201,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"}\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "0",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -247,7 +271,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"+\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "1"
                                     }
                                 ],
                                 "type": "basic"
@@ -353,7 +377,10 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "osascript -e 'set the clipboard to \"`\"' -e 'tell application \"System Events\" to keystroke \"v\" using {command down}'"
+                                        "key_code": "backslash",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
