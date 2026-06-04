@@ -20,12 +20,9 @@ pragmatic rather than a "proper" custom keyboard layout.
 
 ## What the config does
 
-(Y and Z are *not* swapped — the Czech **QWERTY** variant already keeps them in
-the US positions, so no remap is needed.)
-
-- **Unshifted number row** — 
-  to get the accented Czech letter (the inverse of the stock Czech layout).
-- **`⇧` + number row → US-style symbols** - press a number key to get the digit; press `⇧` to get what would otherwise be got by using `⌥` (`@ # $ ~ ^ & * { }`, etc.).
+- The MacOS **Czech QWERTY** input source variant already swaps `Y` and `Z` into their US
+  positions, so no remap is needed. This makes the keycaps lie, which I find OK.
+- **Unshifted number row** - press a number key to get the digit; press `⇧` to get what would otherwise be got by using `⌥` (`@ # $ ~ ^ & * { }`, etc.)
 - **A few extra symbol fixes** — `⇧1` → `+`, `=` / `%` on the equals key,
   and `⇧\` → backtick (`` ` ``).
 - **Umlaut dead-key combiner → `↩`**, because the physical `↩`
