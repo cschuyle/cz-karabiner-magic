@@ -33,7 +33,6 @@ the US positions, so no remap is needed.)
   key is too skinny for my fingers.
 - **`§` (section) → `'`** and **`ů` → `;`** (with `"` on `⇧ů`), so common
   programmer punctuation doesn't require `⌥` gymnastics.
-- **Swap the `<>` and `|\` keys** to match where I expect them.
 
 ## The dead-key gotcha (why some mappings look weird)
 
@@ -41,16 +40,14 @@ On the Czech QWERTY layout several physical keys are **dead keys** (e.g. the
 quote key is an acute-accent combiner), so naively remapping a key to
 `key_code: quote` produces an accent, not the character you want.
 
-An earlier version worked around this by shelling out to `osascript` to set the
-clipboard and paste — which added a **~1 second delay** on every press. That's
-been replaced with **native key events that target the correct level of the
-Czech QWERTY layout**. For example, a literal apostrophe is `⌥` + `quote` on
-this layout, so the rule emits exactly that and is instant.
+So instead of remapping to the bare key, the config emits **native key events
+that target the correct level of the Czech QWERTY layout**. For example, a
+literal apostrophe is `⌥` + `quote` on this layout, so the rule emits exactly
+that — no dead key, no latency.
 
 If you're adapting this for a different layout, the key insight is: find which
 `key_code` + modifier combination already produces the character you want under
-your active macOS layout, and map *to* that, instead of pasting via the
-clipboard.
+your active macOS layout, and map *to* that.
 
 ## Install
 
@@ -72,9 +69,6 @@ ln -s "$PWD/cz-karabiner-magic/karabiner" ~/.config/karabiner
 
 Then open Karabiner-Elements and confirm the profile loaded. Because the symlink
 points at the repo, any commit you pull or edit you make takes effect live.
-
-> Note: there used to be `backup` / `copy` / `diff` helper scripts for a
-> copy-based workflow. They're gone — the symlink makes them unnecessary.
 
 ## Tests
 
