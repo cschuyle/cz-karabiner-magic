@@ -1,0 +1,24 @@
+{
+    "source": "Apple 'Czech - QWERTY' layout (xkb reconstruction: jirutka, qwerty-mac group)",
+    "note": "For each key_code, the 4 entries are the characters produced at each macOS layout level. null means a dead key or a non-ASCII/no symbol that we don't assert on. Levels are selected by modifiers held when the *output* (to) event is emitted.",
+    "levels": ["base", "shift", "option", "option+shift"],
+    "keys": {
+        "grave_accent_and_tilde": ["<", ">", null, null],
+        "1": ["+", "1", "`", null],
+        "2": ["\u011b", "2", "@", null],
+        "3": ["\u0161", "3", "#", null],
+        "4": ["\u010d", "4", "$", null],
+        "5": ["\u0159", "5", "~", null],
+        "6": ["\u017e", "6", "^", null],
+        "7": ["\u00fd", "7", "&", null],
+        "8": ["\u00e1", "8", "*", null],
+        "9": ["\u00ed", "9", "{", null],
+        "0": ["\u00e9", "0", "}", null],
+        "hyphen": ["=", "%", null, null],
+        "equal_sign": [null, null, null, null],
+        "semicolon": ["\u016f", "\"", ";", null],
+        "quote": ["\u00a7", "!", "'", null],
+        "backslash": [null, "`", null, null],
+        "non_us_backslash": ["\\", "|", null, null]
+    }
+}
