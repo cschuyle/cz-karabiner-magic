@@ -22,12 +22,12 @@ pragmatic rather than a "proper" custom keyboard layout.
 
 - The MacOS **Czech QWERTY** input source variant already swaps `Y` and `Z` into their US
   positions, so no remap is needed. This makes the keycaps lie, which I find OK.
-- **Unshifted number row** - press a number key to get the digit; press `⇧` to get what would otherwise be got by using `⌥` (`@ # $ ~ ^ & * { }`, etc.)
-- **A few extra symbol fixes** — `⇧1` → `+`, `=` / `%` on the equals key,
-  and `⇧\` → backtick (`` ` ``).
+- **Unshifted number row** - press a number key to get the digit; press `⇧` to get what would otherwise be got by using `⌥`, which is more or less what US keyboards do `⌥` : `@` `#` `$` `~` `^` `&` `*` `{` `}`
+- **A few extra symbol fixes** — `⇧`-`1` → `+`, `=` / `%` on the equals key,
+  and `⇧`-`<umlaut-combinator>` → backtick (`` ` ``).
 - **Umlaut dead-key combiner → `↩`**, because the physical `↩`
-  key is too skinny for my fingers.
-- **`§` (section) → `'`** and **`ů` → `;`** (with `"` on `⇧ů`), so common
+  key is too skinny for my fingers. Yes, I sacrified the umlaut.
+- **`§` (section) → `'`** and **`ů` → `;`** (with `"` on `⇧`-`ů`), so common
   programmer punctuation doesn't require `⌥` gymnastics.
 
 ## The dead-key gotcha (why some mappings look weird)
