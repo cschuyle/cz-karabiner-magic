@@ -66,6 +66,16 @@ ln -s "$PWD/cz-karabiner-magic/karabiner" ~/.config/karabiner
 Then open Karabiner-Elements and confirm the profile loaded. Because the symlink
 points at the repo, any commit you pull or edit you make takes effect live.
 
+## macOS keyboard-shortcut tweaks (outside Karabiner)
+
+Useful system shortcuts you can also configure manually in
+**System Settings → Keyboard → Keyboard Shortcuts**, because the stock Czech
+layout moves keys around:
+
+- **Move focus to next window** ("go to next window") → set it to `⌥` + the
+  `´` / `ˇ` dead-key (acute unshifted, háček/caron when shifted — the key just
+  to the right of `%=`).
+
 ## Tests
 
 The remappings are validated without needing Karabiner running. (True
