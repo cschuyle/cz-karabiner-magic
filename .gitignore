@@ -1,0 +1,7 @@
+# Karabiner auto-generated backups
+karabiner/automatic_backups/
+*.bak-*
+
+# Python
+__pycache__/
+*.pyc
