@@ -26,7 +26,9 @@ pragmatic rather than a "proper" custom keyboard layout.
 - **A few extra symbol fixes** — `⇧`-`1` → `+`, `=` / `%` on the equals key,
   and `⇧`-`<umlaut-combinator>` → backtick (`` ` ``).
 - **Umlaut dead-key combiner → `↩`**, because the physical `↩`
-  key is too skinny for my fingers. Yes, I sacrified the umlaut.
+  key is too skinny for my fingers. Yes, I sacrified the umlaut — but you can
+  still get it with `⌥`-`<umlaut-combinator>`, which emits the umlaut dead key
+  so the next vowel comes out umlauted (e.g. `⌥`-key then `o` → `ö`).
 - **`§` (section) → `'`** and **`ů` → `;`** (with `"` on `⇧`-`ů`), so common
   programmer punctuation doesn't require `⌥` gymnastics.
 
