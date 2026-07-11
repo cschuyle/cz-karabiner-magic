@@ -289,6 +289,22 @@
                             {
                                 "from": {
                                     "key_code": "backslash",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": ["caps_lock"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "backslash",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "return_or_enter" }],
